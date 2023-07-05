@@ -1,0 +1,25 @@
+#car-rentals-page{
+    background:#c8a2c8;
+}
+
+#car-rentals-toggle{
+    background:#8d538d;
+}
+
+#car-rentals-page #car-rentals-bg{
+    background: url("../../car-rentals-bg.jpg") no-repeat !important;
+    background-size: cover !important;
+}
+
+#car-rentals-caroussel{
+    z-index: 10;
+    position: relative;
+    opacity:0;
+    transition: 0.5s;
+}
+
+#car-rentals-caroussel .form-select{
+    width:100% !important;
+    margin:0 !important;
+    max-width:100%;
+}

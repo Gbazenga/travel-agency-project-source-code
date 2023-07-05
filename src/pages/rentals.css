@@ -1,0 +1,25 @@
+#rentals-page{
+    background:#ff7f50;
+}
+
+#rentals-toggle{
+    background:#c53500;
+}
+
+#rentals-page #rentals-bg{
+    background: url("../../rentals-bg.jpg") no-repeat !important;
+    background-size: cover !important;
+}
+
+#rentals-caroussel{
+    z-index: 10;
+    position: relative;
+    opacity:0;
+    transition: 0.5s;
+}
+
+#rentals-caroussel .form-select{
+    width:100% !important;
+    margin:0 !important;
+    max-width:100%;
+}

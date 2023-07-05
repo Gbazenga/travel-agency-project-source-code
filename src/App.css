@@ -1,0 +1,430 @@
+.App{
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Dongle', sans-serif;
+}
+
+#header-grid{
+  height: 100vh;
+}
+
+.header-background{
+  position: absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background-size: cover !important;
+  opacity:0;
+  transition:1.5s;
+}
+
+#background-1{
+  background: url("../header-bg-1.jpg") no-repeat;
+}
+
+#background-2{
+  background: url("../header-bg-2.jpg") no-repeat;
+}
+
+#background-3{
+  background: url("../header-bg-3.jpg") no-repeat;
+  background-position: bottom;
+}
+
+#background-4{
+  background: url("../header-bg-4.jpg") no-repeat;
+}
+
+.background-show{
+  opacity:1 !important;
+}
+
+.choice-box{
+  width: 100%;
+  height: 25%;
+  background: rgba(0, 0, 0, 0.56);
+  color:#fff;
+  border-right: solid 25px #00000097;
+  position: relative;
+  left:0;
+  transition:1s;
+  cursor:pointer;
+}
+
+.box-hidden{
+  position: relative;
+  animation: right-to-left 2s;
+  left:-120%;
+}
+
+.choice-box p{
+  position: relative;
+  top:50%;
+  transform: translateY(-50%);
+  font-size: 6vh;
+  pointer-events: none;
+  opacity:0.4;
+  transition: 0.3s;
+}
+
+.choice-box:hover{
+  border-right: solid 25px #000;
+}
+
+.choice-box:hover p{
+  opacity:1;
+}
+
+#title-area{
+  position: relative;
+  top:30%;
+}
+
+#title-area a{
+  background:#ffffff8e;
+  border:solid 5px #000;
+  border-radius: 30px;
+  padding: 0px 80px;
+  color:#000;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+#title-area a:hover{
+  background:#000;
+  border-color: #fff;
+  color:#fff !important;
+}
+
+#title-area h1{
+  font-size: 17vh;
+  margin-bottom: -40px;
+  text-shadow: #00000099 0px 0px 10px;
+  color:#f0f0f0d6;
+}
+
+#title-area p{
+  font-size: 6vh;
+  text-shadow: #00000099 0px 0px 10px;
+  color:#f0f0f0e7;
+}
+
+@keyframes right-to-left {
+  from {left:0;}
+  to {left:-120%;}
+}
+
+@keyframes left-to-right {
+  from {left:-120%;}
+  to {left:0%;}
+}
+
+@keyframes probably-not-good {
+  from {left:100%;}
+  to {left:0%;}
+}
+
+@keyframes definetly-not-good {
+  from {left:0;}
+  to {left:-100%;}
+}
+
+.App #bad-idea{
+  position: absolute;
+  top:0;
+  left:100%;
+  width:100%;
+  z-index: 100;
+}
+
+.App #bad-idea  .bad{
+  display: none;
+}
+
+.App #bad-idea .chosen{
+  display: block !important;
+}
+
+.no{
+  animation: probably-not-good 2.1s;
+}
+
+.definetly-no{
+  animation: definetly-not-good 2.1s;
+}
+
+.App .homepage-area{
+  position: relative;
+}
+
+.show-mobile{
+  display: none;
+}
+
+.rights{
+  position: absolute;
+  right:0;
+  bottom:0;
+  z-index: 99;
+  color:#fff;
+  text-align: left;
+  background:#0000007a;
+  padding:10px
+}
+
+.rights p{
+  font-size: 25px;
+  margin-bottom: 0 !important;
+}
+
+.rights a{
+  margin-right:20px;
+  background:#fff;
+}
+
+.rights h6{
+  margin-bottom:0 !important
+}
+
+.rights h6 a{
+  background: none;
+}
+
+/*///////////////////////////////// RESPONSIVE /////////////////////////////////////*/
+
+@media only screen and (max-width: 1400px) {
+  .choice-box p{
+    font-size: 5vh;
+  }
+
+  .pages-toggle{
+    bottom:-80vh !important;
+  }
+
+  .carrousel-area p{
+    font-size: 23px !important;
+    margin-top: 0px !important;
+  }
+
+  .internal-pages .internal-img{
+    margin:20px 0 !important; 
+  }
+
+  .link-btn{
+    padding:0 50px !important;
+    width:50% !important;
+  }
+
+  .pages-toggle h1{
+    margin-bottom: -20px !important;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+
+  .carrousel-area p{
+    margin-bottom:0 !important;
+  }
+
+  .choice-box p{
+    font-size: 4vh;
+  }
+
+  .link-btn{
+    width:60% !important;
+  }
+
+  #text-box p{
+    font-size: 28px !important;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  
+  #title-area{
+    display: none;
+  }
+
+  #title-area h1{
+    font-size: 15vh;
+  }
+
+  .show-mobile{
+    display: block;
+    height: 100vh;
+    width:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    padding:0 !important;
+  }
+
+  .show-mobile .carousel-indicators{
+    display: none;
+  }
+
+  .dummy-desktop{
+    display:none
+  }
+
+  .show-mobile #title-area{
+    display: block;    
+  }
+
+  .show-mobile #title-area h1{
+    margin-top:5%
+  }
+
+  .show-mobile .carousel-item{
+    height:100vh !important
+  }
+
+  .carrousel-area{
+    margin-top:5vh !important;
+  }
+
+  .pages-caroussel .col-6{
+    display: none !important;
+  }
+
+  .carousel-indicators{
+    opacity:1 !important;
+    z-index: 100 !important;
+    margin-bottom:6px !important
+  }
+
+  .carousel-indicators [data-bs-target]{
+    background:#000 !important;
+    border:none !important;
+    height:10px !important;
+  }
+
+  #testimonials-caroussel .carrousel-area{
+    margin-top: 15vh !important;
+  }
+
+  .carousel-control-prev, .carousel-control-next{
+    display: none !important;
+  }
+
+  #rentals-caroussel .form-select {
+    margin:0 0 !important;
+  }
+
+  .carrousel-area .image-div{
+    display: none;
+  }
+
+  .carrousel-area .content-center{
+    padding:20px 40px;
+  }
+
+  .internal-pages img{
+    bottom:120px !important;
+  }
+
+  .form-select {
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-top:30px;
+  }
+
+  .form-label{
+    font-size: 3.5vh !important;
+    margin-bottom:-25px !important;
+}
+
+  .navbar-collapse{
+    z-index: 100;
+    background:#ffffffa7;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .show-mobile #title-area h1{
+    margin-top:0%;
+    line-height: 60px;
+    font-size: 13.5vh;
+  }
+
+  #title-area p{
+    font-size: 4.5vh;
+    margin-top: 40px;
+  }
+
+  #text-box{
+    margin-top: 0 !important;
+  }
+
+  #text-box p{
+    font-size: 22px !important;
+  }
+
+  .testimonials{
+    padding: 10px !important
+  }
+
+  .carrousel-area .content-center{
+    padding: 0px 10px!important;
+  }
+
+  .carrousel-area h3{
+    font-size: 30px !important;
+    margin-bottom:-10px !important
+  }
+
+  .carrousel-area p{
+    width: 100% !important;
+    font-size: 18px !important;
+  }
+
+  .link-btn{
+    width: 100% !important;
+  }
+
+  #text-box h1{
+    line-height: 50px;
+    margin-top:20px !important;
+  }
+
+  .internal-pages .internal-img{
+    max-height: 20vh !important;
+  }
+
+  .internal-pages img{
+    bottom: 50px !important;
+  }
+
+  .form-label{
+    font-size: 3.5vh !important;
+    margin-top:20px
+  }
+
+  #restaurants-page .form-label{
+    margin-top:20px !important;
+  }
+
+  .form-select{
+    margin-top:0 !important
+  }
+
+  .link-btn{
+    font-size: 20px !important;
+  }
+
+  .carrousel-area h4{
+    margin-bottom: 0 !important;
+    font-size: 20px !important;
+  }
+  .carrousel-area h5{
+    margin-bottom: 0 !important;
+  }
+
+  .carrousel-area span, .internal-pages span{
+    font-size: 20px !important;
+  }
+}

@@ -1,0 +1,27 @@
+#testimonials-page{
+    background:#91b2be;
+}
+
+#testimonials-toggle{
+    background:#496e7c;
+}
+
+#testimonials-page #testimonials-bg{
+    background: url("../../testimonials-bg.jpg") no-repeat !important;
+    background-size: cover !important;
+}
+
+#testimonials-caroussel{
+    z-index: 10;
+    position: relative;
+    opacity:0;
+    transition: 0.5s;
+}
+
+.testimonials{
+    padding: 50px 100px;
+}
+
+#testimonials-caroussel .carousel-item.active{
+    height:100% !important;
+}

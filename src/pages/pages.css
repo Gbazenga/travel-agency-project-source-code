@@ -1,0 +1,378 @@
+.pages-base{
+    font-family: 'Dongle', sans-serif;
+    height:100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.navbar-nav{
+    margin-left: auto;
+    padding: 20px;
+    
+}
+
+#nav-title{
+    font-size: 50px;
+    text-decoration: none !important;
+    color:#000 !important;
+    cursor:pointer;
+}
+
+.navbar-nav a{
+    font-size: 35px;
+    text-decoration: none !important;
+    color:#000 !important;
+    border-bottom: solid 3px transparent !important;
+    transition:0.3s;
+    cursor:pointer;
+}
+
+.navbar-nav a:hover{
+    border-bottom: solid 3px #000 !important;
+}
+
+#text-box{
+    text-align: center;
+    color:#fff;
+    margin-top:10vh;
+    transition: 1s;
+}
+
+#text-box h1{
+    font-size: 100px;
+}
+
+#text-box p{
+    font-size: 35px;
+}
+
+.pages-toggle{
+    text-align: center;
+    color:#fff;
+    border-radius: 30px;
+    position: absolute;
+    bottom:-83vh;
+    width:80%;
+    height: 100vh;
+    left:10%;
+    padding:30px 0 0px 0;
+    transition: 1s;
+}
+
+.pages-toggle h1{
+    pointer-events: none;
+    z-index: 100;
+    position: relative;
+    transition: 0.5s;
+}
+
+.toggle-show{
+    bottom:-141px !important;
+}
+
+.bg-hidden{
+    position: absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    background-size:cover !important;
+    z-index: 0;
+    pointer-events: none;
+    border-radius: 30px;
+    opacity:0;
+    transition: 0.5s;
+}
+
+#click-area{
+    position: absolute;
+    width:100%;
+    height:100px;
+    left:0;
+    top:0;
+    cursor: pointer;
+}
+
+.form-select{
+    max-width:30%;
+    margin-left:35%;
+}
+
+.carrousel-area{
+    background:#fff;
+    border-radius: 10px;
+    min-height: 40vh;
+    margin-top:10vh;
+    position: relative;
+}
+
+.carrousel-area h3{
+    color:#000;
+    font-size: 50px;
+    text-align: left !important;
+    margin:0 0 -20px 0;
+}
+
+.carrousel-area h4{
+    color:#000;
+    font-size: 25px;
+    text-align: left !important;
+}
+
+.carrousel-area h5{
+    color:#000;
+    text-align: left !important;
+    font-size: 25px;
+}
+
+.carrousel-area p{
+    color:#000;
+    font-size: 26px;
+    text-align: left !important;
+    width:90%;
+    margin-top:30px
+}
+
+.carousel-caption{
+    left:0 !important;
+    right:0 !important;
+}
+
+.carrousel-area .image-div{
+    position: relative;
+    height: 40vh;
+    border-right:solid 3px #0000006a;
+    overflow: hidden;
+   
+}
+
+.carrousel-area img{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    height:100%;
+    width:auto !important;
+}
+
+.carrousel-area .content-center{
+    position: relative;
+    top:50%;
+    transform:translateY(-50%)
+}
+
+.carrousel-area span, .internal-pages span{
+    font-size:23px;
+}
+
+.carrousel-area .col-lg-9 span{
+    color:#000;
+}
+
+.link-btn{
+    background:#000;
+    padding:5px 50px;
+    color:#fff;
+    text-decoration: none;
+    font-size: 25px;
+    border-radius: 15px;
+    margin-right: auto;
+    display: block;
+    width:45%;
+    border:solid 5px #000;
+    transition: 0.3s;
+    cursor:pointer;
+}
+
+.link-btn:hover{
+    background:#fff;
+    color:#000
+}
+
+.carousel-inner{
+    min-height: 40vh;
+}
+
+.carousel-item{
+    overflow: hidden;
+}
+
+.carousel-control-prev{
+    left:-150px !important;
+}
+
+.carousel-control-next{
+    right:-150px !important
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon{
+    height: 4rem !important;
+    width: 4rem !important;
+}
+
+.carousel-indicators{
+    opacity:0;
+}
+
+.form-label{
+    font-size: 3vh;
+}
+
+.show{
+    opacity: 1 !important;
+}
+
+.hide{
+    opacity: 0 !important;
+}
+
+.turn{
+    transform: rotate(180deg);
+    margin-top:-20px !important;
+}
+
+.page-area{
+    position: relative;
+    height: 100vh;
+}
+
+.app-area{
+    position: absolute;
+    left:-100%;
+    top:0;
+    width:100%;
+    z-index: 100;
+}
+
+.same-level-pages{
+    position: absolute;
+    left:0%;
+    top:100%;
+    width:100%;
+}
+
+.same-level-hide{
+    display: none;
+}
+
+/*///////////////////////// MOVE TO HOMEPAGE /////////////////////////////*/
+
+@keyframes move-page {
+    from {left:0;}
+    to {left:100%;}
+}
+  
+@keyframes move-app {
+    from {left:-100%;}
+    to {left:0;}
+}
+
+.move-page{
+    animation: move-page 2.1s;
+  }
+  
+.move-app{
+    animation: move-app 2.1s;
+}
+
+/*///////////////////////// MOVE TO PAGE ON SAME LEVEL /////////////////////////////*/
+
+@keyframes level-page-going {
+    from {top:0;}
+    to {top:-100%;}
+}
+  
+@keyframes level-page-coming {
+    from {top:100%;}
+    to {top:0;}
+}
+
+.level-page-going{
+    animation: level-page-going 1.6s;
+  }
+  
+.level-page-coming{
+    animation: level-page-coming 1.6s;
+}
+
+/*///////////////////////// MOVE TO INNER PAGE /////////////////////////////*/
+
+
+.text-going{
+    transform:translateX(-150%);
+    transition:1.5s !important;
+}
+
+.toggle-going{
+    left:-100% !important;
+    transition:1.5s !important;
+}
+
+.text-coming{
+    transform:translateX(0);
+    transition:1.5s !important;
+}
+
+.toggle-coming{
+    left:10% !important;
+    transition:1.5s !important;
+}
+
+.internal-area{
+    position: absolute;
+    left:100%;
+    top:135.5px;
+    width:100%;
+    transition:1.5s
+}
+
+.internal-coming{
+    left:0;
+}
+
+/*////////////////////////////////////////// INTERNALS ////////////////////////////////////////////////*/
+
+.internal-pages{
+    text-align: center;
+    overflow: hidden;
+    font-family: 'Dongle', sans-serif;
+    height:100vh;
+    color:#fff;
+    position: relative;
+}
+
+.internal-pages .internal-img{
+    overflow:hidden;
+    max-height:40vh;
+    margin:50px 0;
+}
+
+.internal-pages img{
+    overflow: hidden;
+    position: relative;
+    bottom:220px;
+}
+
+
+.internal-pages .link-btn{
+    display: inline;
+}
+
+.internal-pages h2{
+    text-decoration: underline;
+}
+
+#car-rentals-internal{
+    background:#c8a2c8;
+}
+
+#car-rentals-internal .internal-pages img{
+    left:20%;
+}
+
+#rentals-internal{
+    background:#ff7f50;
+}
+
+#restaurants-internal{
+    background:#7cd2b3;
+}

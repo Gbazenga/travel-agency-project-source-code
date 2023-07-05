@@ -1,0 +1,19 @@
+#restaurants-page{
+    background:#7cd2b3;
+}
+
+#restaurants-toggle{
+    background:#32926f;
+}
+
+#restaurants-page #restaurants-bg{
+    background: url("../../restaurants-bg.jpg") no-repeat !important;
+    background-size: cover !important;
+}
+
+#restaurants-caroussel{
+    z-index: 10;
+    position: relative;
+    opacity:0;
+    transition: 0.5s;
+}
