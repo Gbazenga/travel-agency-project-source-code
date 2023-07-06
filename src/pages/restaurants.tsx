@@ -15,6 +15,8 @@ import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
 import openToggleMenu from '../functions/openToggleMenu';
 import delayedConnect from '../functions/delayedConnect';
+import swapToInternal from '../functions/swapToInternal';
+import swapBack from '../functions/swapBack';
 
 import "./pages.css"
 import "./restaurants.css"
@@ -25,60 +27,68 @@ function Restaurants() {
 
     const DUMMY_DATA = [
         {
-            menu:"Italian",
+            info:"Italian",
             title:"Havana",
-            location:"318 Main St Bar Harbor, ME 04609",
+            subtitle:"318 Main St Bar Harbor, ME 04609",
             description: "Aliquam varius viverra ipsum a ullamcorper. Aenean a gravida eros, ac interdum erat. Fusce vitae dapibus metus.",
-            image: foodImg
+            image: foodImg,
+            cost: 0
         },
         {
-            menu:"Italian",
+            info:"Italian",
             title:"Harborside Hotel",
-            location:"55 West St Bar Harbor, ME 04609",
+            subtitle:"55 West St Bar Harbor, ME 04609",
             description: "Aliquam varius viverra ipsum a ullamcorper. Aenean a gravida eros, ac interdum erat. Fusce vitae dapibus metus.",
-            image: foodImg
+            image: foodImg,
+            cost: 0
         },
         {
-            menu:"Chinese",
+            info:"Chinese",
             title:"The Tyger",
-            location:"1 Howard St New York, NY 10013",
+            subtitle:"1 Howard St New York, NY 10013",
             description: "Aliquam varius viverra ipsum a ullamcorper. Aenean a gravida eros, ac interdum erat. Fusce vitae dapibus metus.",
-            image: foodImg
+            image: foodImg,
+            cost: 0
         },
         {
-            menu:"Chinese",
+            info:"Chinese",
             title:"Café China",
-            location:"59 W 37th St New York, NY 10018",
+            subtitle:"59 W 37th St New York, NY 10018",
             description: "Aliquam varius viverra ipsum a ullamcorper. Aenean a gravida eros, ac interdum erat. Fusce vitae dapibus metus.",
-            image: foodImg
+            image: foodImg,
+            cost: 0
         },
         {
-            menu:"French",
+            info:"French",
             title:"Cafe Matisse",
-            location:"167 Park Ave Rutherford, NJ 07070",
+            subtitle:"167 Park Ave Rutherford, NJ 07070",
             description: "Aliquam varius viverra ipsum a ullamcorper. Aenean a gravida eros, ac interdum erat. Fusce vitae dapibus metus.",
-            image: foodImg
+            image: foodImg,
+            cost: 0
         },
         {
-            menu:"French",
+            info:"French",
             title:"Vin Sur Vingt",
-            location:"1140 Broadway New York, NY 10001",
+            subtitle:"1140 Broadway New York, NY 10001",
             description: "Aliquam varius viverra ipsum a ullamcorper. Aenean a gravida eros, ac interdum erat. Fusce vitae dapibus metus.",
-            image: foodImg
+            image: foodImg,
+            cost: 0
         },
         {
-            menu:"Steakhouse",
+            info:"Steakhouse",
             title:"The Smith",
-            location:"1150 Broadway New York, NY 10010",
+            subtitle:"1150 Broadway New York, NY 10010",
             description: "Aliquam varius viverra ipsum a ullamcorper. Aenean a gravida eros, ac interdum erat. Fusce vitae dapibus metus.",
-            image: foodImg
+            image: foodImg,
+            cost: 0
         },
         {
-            menu:"Steakhouse",
+            info:"Steakhouse",
             title:"Colonia Verde",
-            location:"219 Dekalb Ave Brooklyn, NY 11205",
+            subtitle:"219 Dekalb Ave Brooklyn, NY 11205",
             description: "Aliquam varius viverra ipsum a ullamcorper. Aenean a gravida eros, ac interdum erat. Fusce vitae dapibus metus.",
-            image: foodImg
+            image: foodImg,
+            cost: 0
         }
         
     ]
@@ -97,7 +107,7 @@ function Restaurants() {
             return
         }
         const filtered = DUMMY_DATA.filter((item) => {
-            return item.menu === event.target.value;
+            return item.info === event.target.value;
         })
         setFilteredRestaurants(filtered)
         setIndex(0)
@@ -106,50 +116,6 @@ function Restaurants() {
     const handleSelect = (selectedIndex:number) => {
         setIndex(selectedIndex);
     };
-
-    function swapToInternal(event:React.MouseEvent<HTMLElement>) {
-        openToggleMenu(event)
-        const text = document.getElementById("text-box")
-        const toggle = document.querySelector(".pages-toggle")
-        const carousel = toggle!.querySelectorAll(".pages-caroussel")[0]
-
-        const inner = carousel.querySelector(".carousel-inner")
-        const active = inner!.querySelector(".active")
-        const name = active!.querySelector("h3")
-        
-        const pick = DUMMY_DATA.filter((item) => {
-            return item.title === name?.childNodes[0].textContent
-        })
-        setTimeout(() => {
-            text!.classList.add("text-going")
-            toggle!.classList.add("toggle-going")
-        },1000)
-        
-        setInternalContent(pick[0])
-        
-        setTimeout(() => {
-        const internal = document.querySelector(".internal-area")
-        internal!.classList.toggle("internal-coming")
-        }, 1000)
-    }
-
-    function swapBack() {
-        const internal = document.querySelector(".internal-area")
-        internal!.classList.toggle("internal-coming")
-
-        const text = document.getElementById("text-box")
-        const toggle = document.querySelector(".pages-toggle")
-
-        text!.classList.toggle("text-coming")
-        toggle!.classList.toggle("toggle-coming")
-        
-        setTimeout(() => {
-            text!.classList.toggle("text-going")
-            toggle!.classList.toggle("toggle-going")
-            text!.classList.toggle("text-coming")
-            toggle!.classList.toggle("toggle-coming")
-        },1500)
-    }
 
     return <div id="restaurants-page" className="pages-base">
         <div className='page-area'>
@@ -205,10 +171,10 @@ function Restaurants() {
                                                 </Col>
                                                 <Col lg="9">
                                                     <div className='content-center'>
-                                                        <h3>{item.title} <span>(Menu: {item.menu})</span></h3>
-                                                        <h4>{item.location}</h4>
+                                                        <h3>{item.title} <span>(info: {item.info})</span></h3>
+                                                        <h4>{item.subtitle}</h4>
                                                         <p>{item.description}</p>
-                                                        <div className="link-btn" onClick={swapToInternal}>View more info</div>
+                                                        <div className="link-btn" onClick={(event) => swapToInternal(event, openToggleMenu, DUMMY_DATA, setInternalContent)}>View more info</div>
                                                     </div>
                                                 </Col>
                                             </Row>
@@ -225,8 +191,8 @@ function Restaurants() {
         <div className='internal-area'>
             <div id="restaurants-internal">
                 <Container className='internal-pages'>
-                    <h1>{internalContent.title} <span>(Menu: {internalContent.menu})</span></h1>
-                    <h2>Address: {internalContent.location}</h2>
+                    <h1>{internalContent.title} <span>(Menu: {internalContent.info})</span></h1>
+                    <h2>Address: {internalContent.subtitle}</h2>
                     <h3>{internalContent.description}</h3>
                     <div className='internal-img'>
                         <img className="d-block w-100" src={internalContent.image} alt={internalContent.title}/>

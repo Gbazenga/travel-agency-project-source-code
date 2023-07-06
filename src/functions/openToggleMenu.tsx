@@ -1,6 +1,5 @@
 function openToggleMenu(event: React.MouseEvent<HTMLElement>) {
     event.preventDefault();
-    console.log("yes")
     const target = document.querySelector(".pages-toggle")
     target!.classList.toggle("toggle-show")
 

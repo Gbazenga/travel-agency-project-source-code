@@ -1,16 +1,17 @@
-/*function swapToInternal(event:React.MouseEvent<HTMLElement>, openToggleMenu:(event: React.MouseEvent<HTMLElement, MouseEvent>) => void, DUMMY_DATA: {
-    squareft: string;
+function swapToInternal(event:React.MouseEvent<HTMLElement>, openToggleMenu:(event: React.MouseEvent<HTMLElement, MouseEvent>) => void, DUMMY_DATA: {
+    info: string;
     title: string;
-    type: string;
+    subtitle: string;
     description: string;
     image: any;
     cost: number;
 }[], setInternalContent:(value: React.SetStateAction<{
-    menu: string;
+    info: string;
     title: string;
-    location: string;
+    subtitle: string;
     description: string;
     image: any;
+    cost: number;
 }>) => void) {
     openToggleMenu(event)
     const text = document.getElementById("text-box")
@@ -35,12 +36,6 @@
     const internal = document.querySelector(".internal-area")
     internal!.classList.toggle("internal-coming")
     }, 1000)
-}
-
-export default swapToInternal;*/
-
-function swapToInternal() {
-    return <h1>hi</h1>
 }
 
 export default swapToInternal;
