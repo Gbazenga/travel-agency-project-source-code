@@ -191,7 +191,8 @@ function Restaurants() {
         <div className='internal-area'>
             <div id="restaurants-internal">
                 <Container className='internal-pages'>
-                    <h1>{internalContent.title} <span>(Menu: {internalContent.info})</span></h1>
+                    <h1>{internalContent.title}</h1>
+                    <span>(Menu: {internalContent.info})</span>
                     <h2>Address: {internalContent.subtitle}</h2>
                     <h3>{internalContent.description}</h3>
                     <div className='internal-img'>

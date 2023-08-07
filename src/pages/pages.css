@@ -317,17 +317,6 @@
     transition:1.5s !important;
 }
 
-.internal-area{
-    position: absolute;
-    left:100%;
-    top:135.5px;
-    width:100%;
-    transition:1.5s
-}
-
-.internal-coming{
-    left:0;
-}
 
 /*////////////////////////////////////////// INTERNALS ////////////////////////////////////////////////*/
 
@@ -338,6 +327,22 @@
     height:100vh;
     color:#fff;
     position: relative;
+}
+
+.internal-area{
+    position: absolute;
+    left:100%;
+    top:135.5px;
+    width:100%;
+    transition:1.5s
+}
+
+.internal-area h1{
+    display: inline-block;
+}
+
+.internal-coming{
+    left:0;
 }
 
 .internal-pages .internal-img{
@@ -367,10 +372,6 @@
 
 #car-rentals-internal .internal-pages img{
     left:20%;
-}
-
-#rentals-internal{
-    background:#ff7f50;
 }
 
 #restaurants-internal{

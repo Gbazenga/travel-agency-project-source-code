@@ -238,7 +238,8 @@ function Rentals() {
             <div className='internal-area'>
                 <div id="rentals-internal">
                     <Container className='internal-pages'>
-                        <h1>{internalContent.title}<span>({internalContent.info} ft²)</span></h1>
+                        <h1>{internalContent.title}</h1>
+                        <span>({internalContent.info} ft²)</span>
                         <h2>Monthly: ${internalContent.cost}</h2>
                         <h3>{internalContent.description}</h3>
                         <div className='internal-img'>

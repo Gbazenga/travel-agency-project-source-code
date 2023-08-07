@@ -16,11 +16,10 @@ function swapToInternal(event:React.MouseEvent<HTMLElement>, openToggleMenu:(eve
     openToggleMenu(event)
     const text = document.getElementById("text-box")
     const toggle = document.querySelector(".pages-toggle")
-    const carousel = toggle!.querySelectorAll(".pages-caroussel")[0]
 
-    const inner = carousel.querySelector(".carousel-inner")
-    const active = inner!.querySelector(".active")
-    const name = active!.querySelector("h3")
+    const button = event.target as HTMLElement
+    const inner = button.parentElement;
+    const name = inner?.children[0]
     
     const pick = DUMMY_DATA.filter((item) => {
         return item.title === name?.childNodes[0].textContent
